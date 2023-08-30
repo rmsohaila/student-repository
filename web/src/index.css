@@ -1,0 +1,7 @@
+table tbody tr {
+    cursor: pointer;
+}
+
+.modal-90w {
+    width: 90% !important;
+}
