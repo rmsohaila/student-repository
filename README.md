@@ -1,0 +1,37 @@
+# INSTRUCTIONS FOR FRONTEND:
+==========================
+
+The build folder is ready to be deployed.
+
+You may serve it with a static server:
+`serve -s build`
+
+To install serve package use npm install -g serve
+
+
+
+# INSTRUCTIONS FOR BACKEND:
+
+Docker support is added.
+
+Right now I've keep the architecture as clean and simple as possible. Addressing SOLID principles.
+
+As per best practices for small scale application complex architecture is not recommended.
+
+For medium to large enterprise applications I used to use Repository & Unit of Work Pattern.
+
+As well as ONION/Clean architecture for complex applications.
+
+# Steps
+1. Create database in SQL Server `senerio_db`
+   1.1 Change database connection string in `appsettings.json`
+2. Restore Packages
+   2.1 `API` => dotnet restore
+   2.2 `web` => npm install
+3. Run `API` solution => dotnet run / dotnet watch
+   **NOTE: on first launch, api will deploy the code-first database migration using the database connection string automatically.
+
+4. Change API_URL variable `Web\src\config.ts`, replace with the PORT allocated by `dotnet run` (API)
+5. In `web\` run with => npm start
+
+Thanks :)
